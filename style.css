@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@400;600&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(to bottom right, #add8e6, #ffe4f0);
+  color: #333;
+  line-height: 1.7;
+  padding: 2rem;
+  position: relative;
+  overflow-x: hidden;
+  transition: background 1s ease-in-out;
+}
+
+.container {
+  max-width: 800px;
+  margin: auto;
+  background: rgba(255, 255, 255, 0.85);
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 0 15px rgba(255, 182, 193, 0.4);
+  animation: fadeIn 2s ease-in-out;
+}
+
+h1 {
+  text-align: center;
+  font-family: 'Great Vibes', cursive;
+  font-size: 2.5rem;
+  color: #ff69b4;
+  margin-bottom: 2rem;
+  animation: textFade 2.5s ease-in-out;
+}
+
+h2 {
+  color: #ff1493;
+  margin-top: 2rem;
+  font-size: 1.5rem;
+  animation: textFade 3s ease-in-out;
+}
+
+p {
+  margin-bottom: 1rem;
+  color: #444;
+  font-size: 1rem;
+  text-align: justify;
+  animation: fadeIn 2s ease;
+}
+
+section {
+  margin-bottom: 2rem;
+}
+
+/* Heart Animation */
+.hearts::before,
+.hearts::after {
+  content: "💗";
+  font-size: 1.2rem;
+  position: fixed;
+  animation: heartFall 10s linear infinite;
+  pointer-events: none;
+}
+
+.hearts::before {
+  left: 20%;
+  animation-delay: 0s;
+}
+
+.hearts::after {
+  left: 70%;
+  animation-delay: 3s;
+}
+
+@keyframes heartFall {
+  0% {
+    top: -10%;
+    transform: rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    top: 110%;
+    transform: rotate(360deg);
+    opacity: 0;
+  }
+}
+
+/* Text fade in */
+@keyframes textFade {
+  0% { opacity: 0; transform: translateY(-10px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Section fade */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  .container {
+    padding: 1.2rem;
+  }
+
+  p {
+    font-size: 0.95rem;
+  }
+}
